@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.bg-hero {
+  background-image: url("./image/bg_hero.svg");
+}
