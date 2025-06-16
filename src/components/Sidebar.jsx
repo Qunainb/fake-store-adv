@@ -9,7 +9,7 @@ import { useContext, useState } from "react";
 
 export default function Sidebar() {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
 
   return (
     <div
@@ -31,6 +31,21 @@ export default function Sidebar() {
         {cart.map((item) => (
           <CartItem item={item} key={item.id} />
         ))}
+      </div>
+      <div className=" flex flex-col gap-y-3 py-4 mt-4">
+        <div className="flex w-full justify-between items-center">
+          {/* Total */}
+          <div className="uppercase font-semibold">
+            <span className="mr-2">Total:</span>$ 1000
+          </div>
+          {/* clear cart */}
+          <div
+            onClick={clearCart}
+            className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl"
+          >
+            <FiTrash2 />
+          </div>
+        </div>
       </div>
     </div>
   );

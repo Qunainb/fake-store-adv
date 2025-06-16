@@ -26,10 +26,25 @@ export default function CartContextProvider({ children }) {
     }
   }
 
-  console.log(cart);
+  function removeFromCart(id) {
+    const newCart = cart.filter((item) => item.id !== id);
+
+    setCart(newCart);
+  }
+
+  function clearCart() {
+    setCart([]);
+  }
+
+  function increaseAmount(id) {
+    const item = cart.find((item) => item.id === id);
+    addToCart(item, id);
+  }
 
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeFromCart, clearCart, increaseAmount }}
+    >
       {children}
     </CartContext.Provider>
   );
