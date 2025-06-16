@@ -22,7 +22,7 @@ export default function Header() {
         isActive ? "bg-white py-4 shadow-md" : "bg-none py-6"
       } fixed w-full z-10 transition-all`}
     >
-      <div className="container mx-auto flex items-center justify-between h-full">
+      <div className="container mx-auto px-6 flex items-center justify-between h-full">
         <Link to="/">
           <div>
             <img className="w-[40px]" src={logo} alt="" />

@@ -46,6 +46,8 @@ export default function Sidebar() {
             <FiTrash2 />
           </div>
         </div>
+        <Link>View cart</Link>
+        <Link>Checkout</Link>
       </div>
     </div>
   );
